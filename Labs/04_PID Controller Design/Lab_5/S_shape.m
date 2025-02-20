@@ -45,7 +45,7 @@ figure(1)
 hold on
 plot(time, TangentLine, "K", 'LineWidth', 1.5);
 plot(Inf_Time, Inf_Res, "RO", 'MarkerSize', 1, 'LineWidth', 5, 'Color', 'r')
-xlim([0 1.2]);
+xlim([0 1.2]);  
 legend("Response", "Tangent", "Inflection Point");
 
 %% Get L (Delay Time) & T (Time Constant) & K (System Gain)

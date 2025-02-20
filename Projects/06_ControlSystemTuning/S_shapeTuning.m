@@ -1,5 +1,5 @@
 %% Parameters Definition
-% C(s) = Kp+KIs+KDs = Kp(1+1/(Tis)+Tds). ==> PID Controller Equation
+% C(s) = Kp+KI/s+KDs = Kp(1+1/(Tis)+Tds). ==> PID Controller Equation
 
 %% Step Response in Open Loop Test
 [Res, time] = step(G);
