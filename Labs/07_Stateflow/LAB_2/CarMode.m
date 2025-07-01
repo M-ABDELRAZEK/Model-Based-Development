@@ -6,6 +6,5 @@ classdef CarMode < Simulink.IntEnumType
         DoNothing(3)
         CruiseSystemOff(4)
         FaultOccured(5)
-        Crash(6)
     end
 end
