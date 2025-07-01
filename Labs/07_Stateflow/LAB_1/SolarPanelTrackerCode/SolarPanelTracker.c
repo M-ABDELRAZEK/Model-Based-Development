@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'SolarPanelTracker'.
  *
- * Model version                  : 1.2
+ * Model version                  : 1.4
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Fri Jun 27 18:07:19 2025
+ * C/C++ source code generated on : Mon Jun 30 19:04:16 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -84,6 +84,31 @@ void SolarPanelTracker_step(void)
   /* Chart: '<S1>/ServoTrackerSystem' */
   if (rtDW.is_active_c3_SolarPanelTracker == 0) {
     rtDW.is_active_c3_SolarPanelTracker = 1U;
+    if (fabs(rtb_Add - rtb_Gain3) <= 0.5) {
+      /* Outport: '<Root>/ServoPanelRotation' */
+      rtY.ServoPanelRotation = 0.0;
+    } else if (rtb_Add > rtb_Gain3) {
+      /* Outport: '<Root>/ServoPanelRotation' */
+      rtY.ServoPanelRotation = rtb_Add / 2.0 * 255.0 / 5.0 * rtDW.ServoStepAngle;
+    } else {
+      /* Outport: '<Root>/ServoPanelRotation' */
+      rtY.ServoPanelRotation = rtb_Gain3 / 2.0 * 255.0 / 5.0 *
+        rtDW.ServoStepAngle;
+    }
+
+    if (fabs(rtb_Gain - rtb_Add3) <= 0.5) {
+      /* Outport: '<Root>/ServoPlateRotation' */
+      rtY.ServoPlateRotation = 0.0;
+    } else if (rtb_Gain > rtb_Add3) {
+      /* Outport: '<Root>/ServoPlateRotation' */
+      rtY.ServoPlateRotation = rtb_Gain / 2.0 * 255.0 / 5.0 *
+        rtDW.ServoStepAngle;
+    } else {
+      /* Outport: '<Root>/ServoPlateRotation' */
+      rtY.ServoPlateRotation = rtb_Add3 / 2.0 * 255.0 / 5.0 *
+        rtDW.ServoStepAngle;
+    }
+  } else {
     if (fabs(rtb_Add - rtb_Gain3) <= 0.5) {
       /* Outport: '<Root>/ServoPanelRotation' */
       rtY.ServoPanelRotation = 0.0;
