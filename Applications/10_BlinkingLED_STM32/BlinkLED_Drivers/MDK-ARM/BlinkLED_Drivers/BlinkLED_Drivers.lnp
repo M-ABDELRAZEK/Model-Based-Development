@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"blinkled_drivers\startup_stm32f103xb.o"
+"blinkled_drivers\main.o"
+"blinkled_drivers\gpio.o"
+"blinkled_drivers\stm32f1xx_it.o"
+"blinkled_drivers\stm32f1xx_hal_msp.o"
+"blinkled_drivers\ledblink_ae_stm32.o"
+"blinkled_drivers\stm32f1xx_hal_gpio_ex.o"
+"blinkled_drivers\stm32f1xx_hal.o"
+"blinkled_drivers\stm32f1xx_hal_rcc.o"
+"blinkled_drivers\stm32f1xx_hal_rcc_ex.o"
+"blinkled_drivers\stm32f1xx_hal_gpio.o"
+"blinkled_drivers\stm32f1xx_hal_dma.o"
+"blinkled_drivers\stm32f1xx_hal_cortex.o"
+"blinkled_drivers\stm32f1xx_hal_pwr.o"
+"blinkled_drivers\stm32f1xx_hal_flash.o"
+"blinkled_drivers\stm32f1xx_hal_flash_ex.o"
+"blinkled_drivers\stm32f1xx_hal_exti.o"
+"blinkled_drivers\system_stm32f1xx.o"
+--strict --scatter "BlinkLED_Drivers\BlinkLED_Drivers.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "BlinkLED_Drivers.map" -o BlinkLED_Drivers\BlinkLED_Drivers.axf
